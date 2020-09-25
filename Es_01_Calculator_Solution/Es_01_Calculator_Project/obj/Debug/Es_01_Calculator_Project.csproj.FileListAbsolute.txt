@@ -1,0 +1,20 @@
+C:\Users\User\Desktop\Scuola\Terza\Info pratica\Es_01_Calculator_Solution\Es_01_Calculator_Project\bin\Debug\Es_01_Calculator_Project.exe.config
+C:\Users\User\Desktop\Scuola\Terza\Info pratica\Es_01_Calculator_Solution\Es_01_Calculator_Project\bin\Debug\Es_01_Calculator_Project.exe
+C:\Users\User\Desktop\Scuola\Terza\Info pratica\Es_01_Calculator_Solution\Es_01_Calculator_Project\bin\Debug\Es_01_Calculator_Project.pdb
+C:\Users\User\Desktop\Scuola\Terza\Info pratica\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Scuola\Terza\Info pratica\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.FormMain.resources
+C:\Users\User\Desktop\Scuola\Terza\Info pratica\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.Properties.Resources.resources
+C:\Users\User\Desktop\Scuola\Terza\Info pratica\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Scuola\Terza\Info pratica\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Scuola\Terza\Info pratica\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.exe
+C:\Users\User\Desktop\Scuola\Terza\Info pratica\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.pdb
+E:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\bin\Debug\Es_01_Calculator_Project.exe.config
+E:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\bin\Debug\Es_01_Calculator_Project.exe
+E:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\bin\Debug\Es_01_Calculator_Project.pdb
+E:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.csprojAssemblyReference.cache
+E:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.FormMain.resources
+E:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.Properties.Resources.resources
+E:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.csproj.GenerateResource.cache
+E:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.exe
+E:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.pdb
+E:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.csproj.CoreCompileInputs.cache
