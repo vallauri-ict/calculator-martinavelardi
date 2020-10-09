@@ -43,6 +43,7 @@ namespace Es_01_Calculator_Project
 
         };
         private RichTextBox resultBox;
+        private Font baseFont = new Font("Segoe UI", 22, FontStyle.Bold);
 
         private const char ASCIIZERO = '\x0000';
         private double operand1, operand2, result;
@@ -63,7 +64,7 @@ namespace Es_01_Calculator_Project
             resultBox = new RichTextBox();
             resultBox.ReadOnly = true;
             resultBox.SelectionAlignment = HorizontalAlignment.Right;
-            resultBox.Font = new Font("Segoe UI", 22);
+            resultBox.Font = baseFont;
             resultBox.Width = this.Width - 16;
             resultBox.Height = 50;
             resultBox.Top = 20;
@@ -75,10 +76,21 @@ namespace Es_01_Calculator_Project
 
         private void ResultBox_TextChanged(object sender, EventArgs e)
         {
-            int newSize = 22 + (15 - resultBox.Text.Length);
-            if (newSize > 8 && newSize < 23)
+            if (resultBox.Text.Length == 1)
             {
-                resultBox.Font = new Font("Segoe UI", newSize);
+                resultBox.Font = baseFont;
+            }
+            else
+            {
+                int delta = 17 - resultBox.Text.Length;
+                if (delta % 2 == 0)
+                {
+                    float newSize = baseFont.Size + delta;
+                    if (newSize > 8 && newSize < 23)
+                    {
+                        resultBox.Font = new Font(baseFont.FontFamily, newSize, baseFont.Style);
+                    }
+                }
             }
         }
 
@@ -130,7 +142,10 @@ namespace Es_01_Calculator_Project
                 {
                     resultBox.Text = "";    // tolgo lo 0
                 }
-                resultBox.Text += clickedButton.Text;
+                if (resultBox.Text.Length < 20)
+                {
+                    resultBox.Text += clickedButton.Text;
+                }
             }
             else
             {
@@ -138,7 +153,10 @@ namespace Es_01_Calculator_Project
                 {
                     if (!resultBox.Text.Contains(bs.Content.ToString()))
                     {
-                        resultBox.Text += clickedButton.Text;
+                        if (resultBox.Text.Length < 20)
+                        {
+                            resultBox.Text += clickedButton.Text;
+                        }
                     }
                 }
                 if (bs.IsPlusMinusSign)
@@ -175,13 +193,24 @@ namespace Es_01_Calculator_Project
             lastButtonClicked = bs;
         }
 
+        /// <summary>
+        /// Format the number using thousend separator and 16 decimal digits
+        /// </summary>
+        /// <param name="number">The number to format</param>
+        /// <returns>A string with thousend separator and a maximum 16 digit after the decimal point</returns>
+        private string getFormattedNumber(double number)
+        {
+            //return String.Format("{0:0,0.0000000000}", number);
+            return number.ToString("N16");
+        }
+
         private void clearAll(double numberToWrite = 0)
         {
             operand1 = 0;
             operand2 = 0;
             result = 0;
             lastOperator = ASCIIZERO;
-            resultBox.Text = numberToWrite.ToString();
+            resultBox.Text = getFormattedNumber(numberToWrite);
         }
 
         private void manageOperators(ButtonStruct bs)
@@ -226,7 +255,7 @@ namespace Es_01_Calculator_Project
                         operand2 = 0;
                     }
                     operand1 = result;
-                    resultBox.Text = result.ToString();
+                    resultBox.Text = getFormattedNumber(result);
                 }
             }
         }
