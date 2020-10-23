@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Es_01_Calculator_Project
@@ -16,7 +17,8 @@ namespace Es_01_Calculator_Project
             public bool IsPlusMinusSign;
             public bool IsOperator;
             public bool IsEqualSign;
-            public ButtonStruct(char content, bool isBold, bool isNumber = false, bool isDecimalSeparator = false, bool isPlusMinusSign = false, bool isOperator = false, bool isEqualSign = false)
+            public bool IsSpecialOperator;
+            public ButtonStruct(char content, bool isBold, bool isNumber = false, bool isDecimalSeparator = false, bool isPlusMinusSign = false, bool isOperator = false, bool isEqualSign = false, bool isSpecialOperator = false)
             {
                 this.Content = content;
                 this.IsBold = isBold;
@@ -25,6 +27,7 @@ namespace Es_01_Calculator_Project
                 this.IsPlusMinusSign = isPlusMinusSign;
                 this.IsOperator = isOperator;
                 this.IsEqualSign = isEqualSign;
+                this.IsSpecialOperator = isSpecialOperator;
             }
             public override string ToString()
             {
@@ -35,7 +38,7 @@ namespace Es_01_Calculator_Project
         private ButtonStruct[,] buttons =
         {
             {new ButtonStruct('%',false),new ButtonStruct('ɶ',false),new ButtonStruct('C',false),new ButtonStruct('⩤',false) },
-            {new ButtonStruct(' ',false),new ButtonStruct(' ',false),new ButtonStruct(' ',false),new ButtonStruct('÷',false, false, false, false, true) },
+            {new ButtonStruct('⅟',false,false,false,false,true,false,true),new ButtonStruct(' ',false),new ButtonStruct(' ',false),new ButtonStruct('÷',false, false, false, false, true) },
             {new ButtonStruct('7',true, true),new ButtonStruct('8',true, true),new ButtonStruct('9',true, true),new ButtonStruct('x',false, false, false, false, true) },
             {new ButtonStruct('4',true, true),new ButtonStruct('5',true, true),new ButtonStruct('6',true, true),new ButtonStruct('-',false, false, false, false, true) },
             {new ButtonStruct('1',true, true),new ButtonStruct('2',true, true),new ButtonStruct('3',true, true),new ButtonStruct('+',false ,false, false, false, true) },
@@ -201,7 +204,8 @@ namespace Es_01_Calculator_Project
         private string getFormattedNumber(double number)
         {
             //return String.Format("{0:0,0.0000000000}", number);
-            return number.ToString("N16");
+            char decimalSeparator = Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator[0];
+            return number.ToString("N16").TrimEnd('0').TrimEnd(decimalSeparator);
         }
 
         private void clearAll(double numberToWrite = 0)
@@ -215,6 +219,26 @@ namespace Es_01_Calculator_Project
 
         private void manageOperators(ButtonStruct bs)
         {
+            if (bs.IsSpecialOperator)
+            {
+                switch (bs.Content)
+                {
+                    case '⅟':
+                        double specialOperatorResult = 1 / (double.Parse(resultBox.Text));
+                        if (lastOperator == ASCIIZERO)
+                        {
+                            result = specialOperatorResult;
+                            resultBox.Text = getFormattedNumber(result);
+                        }
+                        else
+                        {
+                            operand2 = specialOperatorResult;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
             if (lastOperator == ASCIIZERO) // o all'inizio o dopo un =
             {
                 operand1 = double.Parse(resultBox.Text);
@@ -222,8 +246,13 @@ namespace Es_01_Calculator_Project
             }
             else
             {
-                if (lastButtonClicked.IsOperator && !lastButtonClicked.IsEqualSign)
+                if (lastButtonClicked.IsOperator && !lastButtonClicked.IsEqualSign && !bs.IsSpecialOperator)
                 {
+                    if (bs.IsSpecialOperator)
+                    {
+                        result = operand2;
+                        resultBox.Text = getFormattedNumber(result);
+                    }
                     lastOperator = bs.Content;
                 }
                 else
@@ -254,7 +283,10 @@ namespace Es_01_Calculator_Project
                         lastOperator = bs.Content;
                         operand2 = 0;
                     }
-                    operand1 = result;
+                    else
+                    {
+                        lastOperator = ASCIIZERO;
+                    }
                     resultBox.Text = getFormattedNumber(result);
                 }
             }

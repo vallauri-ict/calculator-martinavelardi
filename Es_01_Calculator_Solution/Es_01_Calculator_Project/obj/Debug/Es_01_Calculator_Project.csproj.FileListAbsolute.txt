@@ -26,3 +26,12 @@ D:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\D
 D:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.csproj.GenerateResource.cache
 D:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.exe
 D:\SCUOLA\info\Cambieri\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.pdb
+C:\Users\m.velardi.1394\Desktop\calc\Es_01_Calculator_Solution\Es_01_Calculator_Project\bin\Debug\Es_01_Calculator_Project.exe.config
+C:\Users\m.velardi.1394\Desktop\calc\Es_01_Calculator_Solution\Es_01_Calculator_Project\bin\Debug\Es_01_Calculator_Project.exe
+C:\Users\m.velardi.1394\Desktop\calc\Es_01_Calculator_Solution\Es_01_Calculator_Project\bin\Debug\Es_01_Calculator_Project.pdb
+C:\Users\m.velardi.1394\Desktop\calc\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.csprojAssemblyReference.cache
+C:\Users\m.velardi.1394\Desktop\calc\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.FormMain.resources
+C:\Users\m.velardi.1394\Desktop\calc\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.Properties.Resources.resources
+C:\Users\m.velardi.1394\Desktop\calc\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.csproj.GenerateResource.cache
+C:\Users\m.velardi.1394\Desktop\calc\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.exe
+C:\Users\m.velardi.1394\Desktop\calc\Es_01_Calculator_Solution\Es_01_Calculator_Project\obj\Debug\Es_01_Calculator_Project.pdb
